@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07090D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+  border-color: #00E5FF;
+}
+
+/* Base Body Setup */
+body {
+  background-color: #07090D;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(0, 229, 255, 0.05) 0%, transparent 60%),
+    radial-gradient(circle at 100% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 0% 80%, rgba(0, 229, 255, 0.03) 0%, transparent 40%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Cyber Grid Background */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.cyber-grid-cyan {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 229, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 229, 255, 0.05) 1px, transparent 1px);
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(11, 15, 23, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-cyan {
+  background: rgba(11, 15, 23, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(0, 229, 255, 0.04);
+}
+
+.glass-panel-violet {
+  background: rgba(11, 15, 23, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(139, 92, 246, 0.04);
+}
+
+/* Subtle Neon Text Glows */
+.text-glow-cyan {
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.6), 0 0 40px rgba(0, 229, 255, 0.2);
+}
+
+.text-glow-violet {
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.6), 0 0 40px rgba(139, 92, 246, 0.2);
+}
+
+/* Corner Accents for Futuristic UI Cards */
+.cyber-corners {
+  position: relative;
+}
+
+.cyber-corners::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #00E5FF;
+  border-left: 2px solid #00E5FF;
+  pointer-events: none;
+}
+
+.cyber-corners::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid #8B5CF6;
+  border-right: 2px solid #8B5CF6;
+  pointer-events: none;
+}
