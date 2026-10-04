@@ -3,50 +3,66 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Sparkles,
   Terminal,
-  Layers,
+  Database,
   Layout,
   Cpu,
-  Code2,
-  Workflow,
-  Search,
-  Database,
+  Network,
+  Cloud,
+  Wrench,
   CheckCircle2,
-  Filter
 } from "lucide-react";
 import SectionHeader from "../common/SectionHeader";
 import { SKILL_CATEGORIES } from "../../data/portfolioData";
 
+const ICON_MAP = {
+  Sparkles,
+  Terminal,
+  Database,
+  Layout,
+  Cpu,
+  Network,
+  Cloud,
+  Wrench,
+};
+
 export default function SkillsSection() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
+  // Automatically create filter tabs from your skill categories
   const categories = [
     { id: "all", label: "All Specializations" },
-    { id: "AI & LLM", label: "AI & LLM" },
-    { id: "Programming & Backend", label: "Backend & Systems" },
-    { id: "Data & Tools", label: "Data & Tooling" },
-    { id: "Frontend", label: "Frontend UI" },
+    ...SKILL_CATEGORIES.map((category) => ({
+      id: category.category,
+      label: category.category,
+    })),
   ];
 
   const filteredCategories =
     selectedCategory === "all"
       ? SKILL_CATEGORIES
-      : SKILL_CATEGORIES.filter((c) => c.category === selectedCategory);
+      : SKILL_CATEGORIES.filter(
+          (category) => category.category === selectedCategory
+        );
 
   return (
-    <section id="skills" className="relative py-24 sm:py-32 overflow-hidden">
+    <section
+      id="skills"
+      className="relative py-24 sm:py-32 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Heading */}
         <SectionHeader
           tag="// 02. TECHNICAL PROFICIENCY"
           title="Engineered Skill Matrix"
-          subtitle="Honest, battle-tested tooling applied across intelligent agents, vector search, and scalable backend infrastructure."
+          subtitle="A practical engineering stack spanning AI systems, backend architecture, data infrastructure, DevOps, and modern application development."
         />
 
         {/* Category Filter Tabs */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
           {categories.map((cat) => {
             const isActive = selectedCategory === cat.id;
+
             return (
               <button
                 key={cat.id}
@@ -64,10 +80,16 @@ export default function SkillsSection() {
         </div>
 
         {/* Categorized Skills Grid */}
-        <motion.div layout className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <motion.div
+          layout
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+        >
           <AnimatePresence mode="popLayout">
             {filteredCategories.map((group) => {
               const isCyan = group.accent === "cyan";
+
+              // Get category-specific icon
+              const Icon = ICON_MAP[group.icon] || Cpu;
 
               return (
                 <motion.div
@@ -83,7 +105,8 @@ export default function SkillsSection() {
                       : "border-violet/25 hover:border-violet/50 hover:shadow-violet-sm"
                   } transition-all relative overflow-hidden flex flex-col justify-between`}
                 >
-                  {/* Subtle corner tech border */}
+
+                  {/* Decorative Corner Glow */}
                   <div
                     className={`absolute top-0 right-0 w-24 h-24 ${
                       isCyan ? "bg-cyan/5" : "bg-violet/5"
@@ -91,9 +114,11 @@ export default function SkillsSection() {
                   />
 
                   <div>
-                    {/* Header: Category Name & Technical Brief */}
+                    {/* Category Header */}
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-3">
+
+                        {/* Dynamic Category Icon */}
                         <div
                           className={`p-2.5 rounded-xl ${
                             isCyan
@@ -101,22 +126,25 @@ export default function SkillsSection() {
                               : "bg-violet/10 text-violet border border-violet/30"
                           }`}
                         >
-                          <Cpu className="w-5 h-5" />
+                          <Icon className="w-5 h-5" />
                         </div>
+
                         <h3 className="text-xl font-display font-bold text-white">
                           {group.category}
                         </h3>
                       </div>
+
                       <span className="text-[11px] font-mono text-slate-500 uppercase tracking-widest">
-                        {group.skills.length} TECHNOLOGIES
+                        {group.skills.length} SKILLS
                       </span>
                     </div>
 
+                    {/* Category Description */}
                     <p className="text-xs sm:text-sm text-slate-400 font-sans mb-6">
                       {group.description}
                     </p>
 
-                    {/* Skill Items in Clean List with Roles */}
+                    {/* Skills */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {group.skills.map((skill) => (
                         <motion.div
@@ -126,15 +154,18 @@ export default function SkillsSection() {
                           className="p-3 rounded-xl bg-surface-subtle/80 border border-white/5 hover:border-cyan/30 hover:bg-surface-card transition-all group"
                         >
                           <div className="flex items-center justify-between mb-1">
+
                             <span className="text-sm font-mono font-semibold text-slate-200 group-hover:text-cyan transition-colors">
                               {skill.name}
                             </span>
+
                             <div
                               className={`w-1.5 h-1.5 rounded-full ${
                                 isCyan ? "bg-cyan" : "bg-violet"
                               } opacity-70 group-hover:opacity-100 group-hover:scale-125 transition-all`}
                             />
                           </div>
+
                           <p className="text-[11px] text-slate-400 font-sans leading-relaxed">
                             {skill.role}
                           </p>
@@ -143,20 +174,28 @@ export default function SkillsSection() {
                     </div>
                   </div>
 
-                  {/* Technical Reliability Assurance */}
+                  {/* Footer */}
                   <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-slate-400">
+
                     <span className="flex items-center gap-1.5 text-slate-400">
-                      <CheckCircle2 className={`w-3.5 h-3.5 ${isCyan ? "text-cyan" : "text-violet"}`} />
+                      <CheckCircle2
+                        className={`w-3.5 h-3.5 ${
+                          isCyan ? "text-cyan" : "text-violet"
+                        }`}
+                      />
+
                       Practical implementation in verified projects
                     </span>
-                    <span className="text-slate-500 uppercase">Production-Ready</span>
+
+                    <span className="text-slate-500 uppercase">
+                      Production-Ready
+                    </span>
                   </div>
                 </motion.div>
               );
             })}
           </AnimatePresence>
         </motion.div>
-
       </div>
     </section>
   );

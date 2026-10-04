@@ -65,61 +65,306 @@ export const FOCUS_AREAS = [
     tags: ["Workflow Ops", "Function Calling", "Scheduled Agents", "Automation"]
   }
 ];
-
 export const SKILL_CATEGORIES = [
   {
     category: "AI & LLM",
-    description: "Frameworks, architectures, and retrieval techniques for production intelligence.",
+    description:
+      "LLM application development, agentic workflows, retrieval systems, and AI infrastructure.",
     icon: "Sparkles",
     accent: "cyan",
     skills: [
-      { name: "LangChain", role: "Chaining models, output parsers, and custom tools" },
-      { name: "LangGraph", role: "Cyclic multi-agent stategraphs and human-in-the-loop workflows" },
-      { name: "RAG", role: "Hybrid retrieval, chunking heuristics, and contextual synthesis" },
-      { name: "Vector Databases", role: "ChromaDB, FAISS, Pinecone for similarity search" },
-      { name: "LLM API Integration", role: "Streaming tokens, tool calling, structured schemas" },
-      { name: "Prompt Engineering", role: "Chain-of-thought, few-shot conditioning, system safety" },
-    ]
+      {
+        name: "LangChain",
+        role: "LLM chains, tools, retrievers, structured output, and integrations",
+      },
+      {
+        name: "LangGraph",
+        role: "Stateful agents, cyclic workflows, multi-agent systems, and human-in-the-loop",
+      },
+      {
+        name: "RAG",
+        role: "Document ingestion, chunking, embeddings, retrieval, reranking, and synthesis",
+      },
+      {
+        name: "AI Agents",
+        role: "Tool-using agents, autonomous workflows, planning, memory, and orchestration",
+      },
+      {
+        name: "MCP",
+        role: "Model Context Protocol servers, tools, resources, and AI application integrations",
+      },
+      {
+        name: "Vector Databases",
+        role: "ChromaDB, FAISS, Pinecone, similarity search, and embedding retrieval",
+      },
+      {
+        name: "Embeddings",
+        role: "Semantic representations, similarity search, and retrieval pipelines",
+      },
+      {
+        name: "LLM API Integration",
+        role: "Streaming, tool calling, structured outputs, function calling, and API integration",
+      },
+      {
+        name: "Prompt Engineering",
+        role: "System prompts, few-shot prompting, structured prompting, and output control",
+      },
+      {
+        name: "AI Evaluation",
+        role: "RAG evaluation, response quality, hallucination detection, and pipeline testing",
+      },
+    ],
   },
+
   {
     category: "Programming & Backend",
-    description: "Languages and server frameworks powering AI inference pipelines.",
+    description:
+      "Programming languages and backend technologies for building scalable AI services.",
     icon: "Terminal",
     accent: "violet",
     skills: [
-      { name: "Python", role: "Primary language for ML, agentic scripting, and data pipelines" },
-      { name: "JavaScript", role: "Full-stack development, modern ES6+, and runtime scripting" },
-      { name: "FastAPI", role: "High-performance async REST endpoints with Pydantic validation" },
-      { name: "Node.js", role: "Scalable microservices, serverless hooks, and real-time sockets" },
-      { name: "REST APIs", role: "Robust API contracts, rate limiting, and webhook ingestion" },
-    ]
+      {
+        name: "Python",
+        role: "Primary language for AI, automation, backend services, and data pipelines",
+      },
+      {
+        name: "JavaScript",
+        role: "Modern ES6+, asynchronous programming, frontend, and backend development",
+      },
+      {
+        name: "FastAPI",
+        role: "Async APIs, Pydantic validation, dependency injection, and AI inference services",
+      },
+      {
+        name: "Node.js",
+        role: "Backend services, REST APIs, automation, and real-time applications",
+      },
+      {
+        name: "REST APIs",
+        role: "API design, authentication, validation, error handling, and integrations",
+      },
+      {
+        name: "Pydantic",
+        role: "Data validation, typed schemas, and structured AI outputs",
+      },
+      {
+        name: "Authentication",
+        role: "JWT, OAuth 2.0, API authentication, authorization, and secure sessions",
+      },
+    ],
   },
+
   {
-    category: "Data & Tools",
-    description: "Data manipulation, analytical tooling, and version control infrastructure.",
-    icon: "Layers",
+    category: "Data & Databases",
+    description:
+      "Data processing, databases, analytics, and storage systems used in AI applications.",
+    icon: "Database",
     accent: "cyan",
     skills: [
-      { name: "SQL", role: "Relational database querying, schema modeling, and indexing" },
-      { name: "Pandas", role: "Tabular data cleansing, feature manipulation, and ETL" },
-      { name: "NumPy", role: "Vectorized computations, matrix operations, embeddings" },
-      { name: "Git", role: "Distributed version control, branching workflows, PR reviews" },
-      { name: "GitHub", role: "CI/CD actions, repo management, collaborative development" },
-      { name: "Streamlit", role: "Rapid interactive AI prototyping and stakeholder dashboards" },
-    ]
+      {
+        name: "SQL",
+        role: "Queries, joins, aggregations, schema design, indexing, and optimization",
+      },
+      {
+        name: "PostgreSQL",
+        role: "Relational data modeling, queries, indexing, and backend persistence",
+      },
+      {
+        name: "MongoDB",
+        role: "Document-oriented storage and flexible application data modeling",
+      },
+      {
+        name: "SQLite",
+        role: "Embedded databases for lightweight applications and local persistence",
+      },
+      {
+        name: "Pandas",
+        role: "Data cleaning, transformation, analysis, and ETL workflows",
+      },
+      {
+        name: "NumPy",
+        role: "Numerical computing, vectorized operations, matrices, and embeddings",
+      },
+      {
+        name: "Data Visualization",
+        role: "Matplotlib, Seaborn, Power BI, dashboards, and analytical storytelling",
+      },
+    ],
   },
+
   {
-    category: "Frontend",
-    description: "Modern user interfaces for client-facing AI applications.",
+    category: "DevOps & Cloud",
+    description:
+      "Containerization, deployment, CI/CD, and infrastructure for production applications.",
+    icon: "Cloud",
+    accent: "violet",
+    skills: [
+      {
+        name: "Docker",
+        role: "Containerized applications, reproducible environments, and service isolation",
+      },
+      {
+        name: "Git",
+        role: "Version control, branching strategies, merging, and collaborative workflows",
+      },
+      {
+        name: "GitHub",
+        role: "Repository management, collaboration, issues, and CI/CD workflows",
+      },
+      {
+        name: "GitHub Actions",
+        role: "Automated testing, builds, deployments, and CI/CD pipelines",
+      },
+      {
+        name: "Render",
+        role: "Cloud deployment for APIs, backend services, and web applications",
+      },
+      {
+        name: "Vercel",
+        role: "Frontend deployment, serverless functions, and production web hosting",
+      },
+      {
+        name: "Environment Management",
+        role: "Environment variables, secrets, configuration, and deployment environments",
+      },
+    ],
+  },
+
+  {
+    category: "System Design & Computer Science",
+    description:
+      "Core computer science and engineering concepts behind reliable and scalable systems.",
+    icon: "Network",
+    accent: "cyan",
+    skills: [
+      {
+        name: "System Design",
+        role: "Scalable architectures, APIs, databases, caching, queues, and service boundaries",
+      },
+      {
+        name: "Operating Systems",
+        role: "Processes, threads, memory management, scheduling, synchronization, and file systems",
+      },
+      {
+        name: "Computer Networks",
+        role: "TCP/IP, HTTP, HTTPS, DNS, REST, sockets, and client-server communication",
+      },
+      {
+        name: "DBMS",
+        role: "Normalization, transactions, ACID, indexing, relationships, and query optimization",
+      },
+      {
+        name: "Data Structures & Algorithms",
+        role: "Arrays, strings, hashing, trees, graphs, recursion, and algorithmic problem solving",
+      },
+      {
+        name: "OOP",
+        role: "Abstraction, encapsulation, inheritance, polymorphism, and modular design",
+      },
+      {
+        name: "Software Architecture",
+        role: "Layered architecture, modular systems, service separation, and maintainability",
+      },
+    ],
+  },
+
+  {
+    category: "Frontend & Applications",
+    description:
+      "Modern interfaces for AI-powered web and cross-platform applications.",
     icon: "Layout",
     accent: "violet",
     skills: [
-      { name: "React", role: "Component architecture, hooks, reactive UI, and state management" },
-      { name: "Flutter", role: "Cross-platform mobile application development" },
-      { name: "HTML", role: "Semantic, accessible document structuring and SEO standards" },
-      { name: "CSS", role: "Tailwind CSS, animations, responsive design, and glassmorphism" },
-    ]
-  }
+      {
+        name: "React",
+        role: "Component architecture, hooks, state management, and interactive interfaces",
+      },
+      {
+        name: "Flutter",
+        role: "Cross-platform mobile and desktop application development",
+      },
+      {
+        name: "HTML",
+        role: "Semantic, accessible, and SEO-friendly document structure",
+      },
+      {
+        name: "CSS",
+        role: "Responsive layouts, animations, Tailwind CSS, and modern UI design",
+      },
+      {
+        name: "Streamlit",
+        role: "Rapid AI application prototyping and interactive data applications",
+      },
+    ],
+  },
+
+  {
+    category: "AI Engineering & MLOps",
+    description:
+      "Engineering practices for deploying, monitoring, and maintaining AI systems.",
+    icon: "Cpu",
+    accent: "cyan",
+    skills: [
+      {
+        name: "MLflow",
+        role: "Experiment tracking, model versioning, evaluation, and ML lifecycle management",
+      },
+      {
+        name: "Model Serving",
+        role: "Deploying AI models behind APIs and production inference endpoints",
+      },
+      {
+        name: "AI Pipelines",
+        role: "Data ingestion, preprocessing, inference, evaluation, and automated workflows",
+      },
+      {
+        name: "Model Optimization",
+        role: "Quantization, batching, caching, and inference efficiency",
+      },
+      {
+        name: "Monitoring",
+        role: "Application logs, latency, failures, API usage, and AI system observability",
+      },
+      {
+        name: "Testing",
+        role: "Unit testing, API testing, integration testing, and AI pipeline validation",
+      },
+    ],
+  },
+
+  {
+    category: "Tools & Engineering",
+    description:
+      "Developer tools and engineering practices used to build and ship reliable software.",
+    icon: "Wrench",
+    accent: "violet",
+    skills: [
+      {
+        name: "VS Code",
+        role: "Primary development environment for application and AI engineering",
+      },
+      {
+        name: "Postman",
+        role: "API development, testing, debugging, and endpoint validation",
+      },
+      {
+        name: "Linux",
+        role: "Command-line development, processes, permissions, networking, and deployment",
+      },
+      {
+        name: "REST API Testing",
+        role: "Endpoint validation, authentication testing, and API debugging",
+      },
+      {
+        name: "WebSockets",
+        role: "Real-time bidirectional communication for interactive applications",
+      },
+      {
+        name: "Agile Development",
+        role: "Iterative development, task planning, debugging, and continuous delivery",
+      },
+    ],
+  },
 ];
 
 export const FEATURED_PROJECTS = [
